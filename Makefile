@@ -1,9 +1,13 @@
 PROTOS_DIR = proto
 PROTOS = \
 	$(PROTOS_DIR)/uuid.proto
+
 GO_DIR = go
 GO_PACKAGE = github.com/nicholasngai/uuidpb/go/uuidpb
 GO_PACKAGE_NAME = uuidpb
+
+RUST_DIR = rust
+RUST_PROTOGEN_DIR = rust-protogen
 
 .PHONY: all
 all: protogen-go
@@ -25,3 +29,8 @@ protogen-go:
 	rm -rf $(GO_DIR)/gen
 	cd $(GO_DIR)/$(GO_PACKAGE_NAME) && go mod tidy
 	cd $(GO_DIR)/$(GO_PACKAGE_NAME) && go build .
+
+.PHONY: protogen-rust
+protogen-rust:
+	cd $(RUST_PROTOGEN_DIR) && cargo run
+	cd $(RUST_DIR) && cargo build
