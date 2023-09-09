@@ -24,3 +24,4 @@ protogen-go:
 	mv $(GO_DIR)/gen/$(GO_PACKAGE)/* $(GO_DIR)/$(GO_PACKAGE_NAME)
 	rm -rf $(GO_DIR)/gen
 	cd $(GO_DIR)/$(GO_PACKAGE_NAME) && go mod tidy
+	cd $(GO_DIR)/$(GO_PACKAGE_NAME) && go build .
