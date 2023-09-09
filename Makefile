@@ -15,7 +15,6 @@ protogen-go:
 	protoc \
 		--proto_path=$(PROTOS_DIR) \
 		--go_out=$(GO_DIR)/gen \
-		--go-grpc_out=$(GO_DIR)/gen \
 		$(PROTOS)
 	@if find $(GO_DIR)/gen -type f -not -path '$(GO_DIR)/gen/$(GO_PACKAGE)/*' | grep ''; then \
 		echo 'Found generated stubs outside of $(GO_DIR)/gen/$(GO_PACKAGE)! Please ensure that all protos are defined with go_package within $(GO_PACKAGE).' \
