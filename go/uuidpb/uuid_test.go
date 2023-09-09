@@ -24,7 +24,7 @@ func TestNew(t *testing.T) {
 	assertProtoEqual(t, expected, idProto)
 }
 
-func TestUUID_ToUUID(t *testing.T) {
+func TestToUUID(t *testing.T) {
 	idProto := &UUID{
 		Hi: 16590904492691441048,
 		Lo: 10154307633221547637,
