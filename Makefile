@@ -24,3 +24,4 @@ protogen-go:
 	find $(GO_DIR)/$(GO_PACKAGE_NAME) -type f -name '*.pb.go' -print0 | xargs -0 rm -f
 	mv $(GO_DIR)/gen/$(GO_PACKAGE)/* $(GO_DIR)/$(GO_PACKAGE_NAME)
 	rm -rf $(GO_DIR)/gen
+	cd $(GO_DIR)/$(GO_PACKAGE_NAME) && go mod tidy
