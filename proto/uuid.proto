@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package nicholasngai.uuid;
+package uuid;
 
 option go_package = "github.com/nicholasngai/uuidpb/go/uuidpb";
 
