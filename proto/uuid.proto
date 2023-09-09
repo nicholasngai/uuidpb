@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package nicholasngai.uuid;
+
+option go_package = "github.com/nicholasngai/uuidpb/go/uuidpb";
+
+message UUID {
+  fixed64 hi = 1;
+  fixed64 lo = 2;
+}
